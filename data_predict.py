@@ -20,7 +20,7 @@ def get_neighbors(Tn, i, j):
 def get_Tn_1(T, i, j):
     return round(T[i][j], 3)
 
-N = 5
+N = 10
 L = 1
 t = 0
 t_end = 2e-2
@@ -41,10 +41,10 @@ nn.load_model('he_2(16, 16)1')
 
 #OKRAJOVÉ PODMÍNKY
 for i in range(N):
-    T[0][i] = 0
     T[N - 1][i] = 1
     T[i][0] = 1
     T[i][N - 1] = 1
+    T[0][i] = 0
 
 
 while t < t_end:
